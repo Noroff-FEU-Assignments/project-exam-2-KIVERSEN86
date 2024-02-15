@@ -1,1 +1,14 @@
+// custom
+
+$colour-primary: #2aabe8;
+$colour-secondary: #2ae8e8;
+
+$theme-colors: (
+  "primary": $colour-primary,
+  "dark": $colour-primary,
+);
+
+$headings-font-family: "Montserrat', sans-serif;";
+$font-family-base: "Roboto', sans-serif";
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
