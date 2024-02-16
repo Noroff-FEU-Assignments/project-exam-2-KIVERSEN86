@@ -1,15 +1,14 @@
 import Header from "../Header";
 import Footer from "../Footer";
 import { Outlet } from "react-router-dom";
-import Container from "react-bootstrap/Container";
 
 function Layout() {
   return (
-    <Container>
+    <div className="wrapper">
       <Header />
       <Outlet />
       <Footer />
-    </Container>
+    </div>
   );
 }
 
