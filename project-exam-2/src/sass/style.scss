@@ -13,8 +13,12 @@ $font-family-base: "Roboto', sans-serif";
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-@import "./partials/nav";
-@import "./partials/footer";
+@import "./partials/variables";
+@import "./partials/layout/nav";
+@import "./partials/layout/footer";
+@import "./partials/pages/home";
+@import "./partials/components/form";
+@import "./partials/components/buttons";
 
 * {
   box-sizing: border-box;
@@ -29,4 +33,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+hr {
+  margin: 50px auto;
+  max-width: 600px;
 }

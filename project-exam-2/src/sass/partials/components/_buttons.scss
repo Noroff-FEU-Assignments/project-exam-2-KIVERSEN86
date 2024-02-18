@@ -1,0 +1,22 @@
+.btn-home-form {
+  background-color: $colour-secondary;
+  border: none;
+}
+
+.btn-signup {
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+.btn {
+  border-radius: 20px;
+  background-image: linear-gradient(#4ab8eb, #4ab8eb);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+
+  &:hover {
+    background-color: #4ab8eb;
+    background-size: 100% 100%;
+  }
+}

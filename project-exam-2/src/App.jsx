@@ -1,6 +1,7 @@
 import "./sass/style.scss";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Main/Layout";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<div>Home</div>} />
+            <Route index element={<Home />} />
             <Route path="profiles" element={<div>Profiles</div>} />
             <Route path="contact" element={<div>Contact</div>} />
             <Route path="*" element={<div>Route not found</div>} />
