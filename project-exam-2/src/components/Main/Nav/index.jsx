@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 function DefaultNav() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary justify-content-between">
       <Container>
         <Navbar.Brand href="#home">SocialPlatform</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -19,6 +19,14 @@ function DefaultNav() {
             </Nav.Link>
             <Nav.Link>
               <Link to="/contact">Contact</Link>
+            </Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link>
+              <Link to="/login">Login</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/signup">Sign up</Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
