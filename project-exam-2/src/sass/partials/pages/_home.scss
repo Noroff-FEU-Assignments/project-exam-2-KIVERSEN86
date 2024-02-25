@@ -1,14 +1,16 @@
-.home-container-welcome {
-  margin-bottom: 50px;
-}
+.home {
+  &-container-welcome {
+    margin-bottom: 50px;
+  }
 
-.home-container-welcome,
-.home-container-signup,
-.home-h3 {
-  text-align: center;
-}
+  &-container-welcome,
+  &-container-signup,
+  &-h3 {
+    text-align: center;
+  }
 
-.home-h2,
-.home-h3 {
-  font-size: 1.3rem;
+  &-h2,
+  &-h3 {
+    font-size: 1.3rem;
+  }
 }

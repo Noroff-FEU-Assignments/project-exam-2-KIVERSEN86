@@ -2,8 +2,14 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { useToken } from "../../../states/userStore";
+import { LogoutBtn } from "../../Auth/LogoutBtn";
 
 function DefaultNav() {
+  const token = useToken();
+
+  console.log("token", token);
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary justify-content-between">
       <Container>
@@ -22,12 +28,20 @@ function DefaultNav() {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link>
-              <Link to="/login">Login</Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="/signup">Sign up</Link>
-            </Nav.Link>
+            {!token ? (
+              <>
+                <Nav.Link>
+                  <Link to="/login">Login</Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/signup">Sign up</Link>
+                </Nav.Link>
+              </>
+            ) : (
+              <Nav.Link>
+                <LogoutBtn />
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

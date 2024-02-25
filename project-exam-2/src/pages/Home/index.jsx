@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/esm/Container";
-import { HomeForm, SignupForm } from "../Form";
+import { LoginForm, SignupForm } from "../../components/Form/LoginForm";
 
 function Home() {
   return (
@@ -9,7 +9,7 @@ function Home() {
         <h2 className="home-h2">The platform that connects you to humankind</h2>
       </div>
       <div className="home-container-signup"></div>
-      <HomeForm />
+      <LoginForm />
       <hr />
       <h3 className="home-h3">New to SocialPlatform? Join now to explore our world</h3>
       <SignupForm />
