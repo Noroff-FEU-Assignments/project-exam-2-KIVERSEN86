@@ -1,9 +1,12 @@
 import Container from "react-bootstrap/esm/Container";
+import PostContainer from "../HomeLoggedIn/Card";
+import ProfileCard from "./ProfileCard";
 
 function HomeLoggedIn() {
   return (
-    <Container>
-      <div>Congratulations! You are a winner!!!</div>
+    <Container className="container-loggedin">
+      <ProfileCard />
+      <PostContainer />
     </Container>
   );
 }

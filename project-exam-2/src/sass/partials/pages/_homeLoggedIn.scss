@@ -1,0 +1,19 @@
+.card-container {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.container-logged-in {
+  display: flex;
+}
+
+.profile-card {
+  max-height: 550px;
+  margin-top: 20px;
+}
+
+.container-loggedin {
+  display: flex;
+  flex-direction: row;
+  gap: 75px;
+}

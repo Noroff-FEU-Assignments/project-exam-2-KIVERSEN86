@@ -16,10 +16,8 @@ function DefaultNav() {
         <Navbar.Brand href="#home">SocialPlatform</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link>
-              <Link to="/">Home</Link>
-            </Nav.Link>
+          <Nav className="me-auto link-styling">
+            <Nav.Link>{!token ? <Link to="/">Home</Link> : <Link to="/homeloggedin">Home</Link>}</Nav.Link>
             <Nav.Link>
               <Link to="/profiles">Profiles</Link>
             </Nav.Link>
