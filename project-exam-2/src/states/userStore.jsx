@@ -12,6 +12,7 @@ const userStore = create(
   )
 );
 
+export const userId = () => userStore((state) => state.user?.id);
 export const useToken = () => userStore((state) => state.user?.accessToken);
 
 export const userActions = () => {
