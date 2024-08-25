@@ -1,9 +1,9 @@
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { POST_URL, API_KEY } from "../../constants/api";
-import { useToken } from "../../states/userStore";
+import { useToken, userId } from "../../states/userStore";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import AddPostForm from "../../components/Posts/AddPost";
 
 async function getPosts(token) {
   const options = {
@@ -19,10 +19,8 @@ async function getPosts(token) {
     throw new Error("There was an error fetching the posts");
   }
 
-  const responseData = await response.json();
-  console.log(responseData);
-
-  return responseData.data;
+  const jsonData = await response.json();
+  return jsonData.data;
 }
 
 async function deletePost(id, token) {
@@ -43,8 +41,10 @@ async function deletePost(id, token) {
   return response.json();
 }
 
-function PostContainer() {
+function PostList() {
   const token = useToken();
+  const uId = userId();
+  const queryClient = useQueryClient();
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["posts"],
@@ -52,44 +52,41 @@ function PostContainer() {
     staleTime: 1000 * 60 * 5,
   });
 
-  const deleteMutation = useMutation({
+  const removePost = useMutation({
     mutationFn: (id) => deletePost(id, token),
-    onSuccess: ({ variables }) => {
-      data?.map((post) => {
-        if (post.id === variables.id) {
-          return null;
-        }
-        return post;
-      });
+    onSuccess: () => {
+      console.log("Delete successful:", data);
+      queryClient.invalidateQueries(["posts"]);
     },
   });
 
-  const handleDelete = (id) => {
-    deleteMutation.mutate(id);
+  const deleteOwnPost = (id) => {
+    removePost.mutate(id);
   };
 
   if (isLoading) return <div>Loading...</div>;
-  if (isError) return `An error has occurred: ${error.message}`;
+  if (isError) return <div>An error has occurred: {error.message}</div>;
 
   return (
     <div>
       {data?.map((post) => (
-        <Card style={{ width: "30rem" }} key={post.id} className="card-container">
-          <Card.Header>
-            <Card.Img></Card.Img>
-          </Card.Header>
+        <Card key={post.id} className="card-container">
           <Card.Body>
             <Card.Title>{post.title}</Card.Title>
             <Card.Text>{post.body}</Card.Text>
-            <Button onClick={() => handleDelete(post.id)} className="btn-delete">
-              Delete Post
+            {post.myId === uId && (
+              <Button onClick={() => deleteOwnPost(post.id)} className="btn btn-delete">
+                Delete post
+              </Button>
+            )}
+            <Button className="btn">
+              <Link to={`/posts/${post.id}`}>View Post</Link>
             </Button>
           </Card.Body>
         </Card>
       ))}
-      <AddPostForm />
     </div>
   );
 }
 
-export default PostContainer;
+export default PostList;
