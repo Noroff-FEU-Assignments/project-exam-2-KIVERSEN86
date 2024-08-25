@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/esm/Container";
-import ProfileList from "./ProfileList";
+import ProfileList from "../../components/Profiles/ProfileList";
 
 function Profiles() {
   return (
