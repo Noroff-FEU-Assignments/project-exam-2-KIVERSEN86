@@ -22,7 +22,7 @@ function DefaultNav() {
               <Link to="/profiles">Profiles</Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/posts">Posts</Link>
             </Nav.Link>
           </Nav>
           <Nav>
