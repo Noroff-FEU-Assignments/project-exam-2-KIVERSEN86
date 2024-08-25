@@ -10,6 +10,13 @@
 
 .container-loggedin {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 75px;
+}
+
+@media (min-width: 1000px) {
+  .container-loggedin {
+    flex-direction: row;
+  }
 }
