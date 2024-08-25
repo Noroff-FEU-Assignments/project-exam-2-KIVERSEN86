@@ -65,7 +65,7 @@ function AddPostForm() {
   }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)} className="form-add-post">
       <fieldset disabled={isLoading}>
         {error && <ServerError>{error}</ServerError>}
         <Form.Group className="mb-3" controlId="formBasic">
