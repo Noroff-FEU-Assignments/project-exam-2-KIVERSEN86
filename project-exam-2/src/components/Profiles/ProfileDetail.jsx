@@ -2,6 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { useToken } from "../../states/userStore";
 import { API_KEY, PROFILE_URL } from "../../constants/api";
+import Container from "react-bootstrap/esm/Container";
+import Card from "react-bootstrap/Card";
 
 async function getProfile(token, name) {
   const options = {
@@ -38,14 +40,21 @@ function ProfileDetail() {
 
   return (
     <>
-      {data && (
-        <div>
-          <img src={data.banner.url}></img>
-          <h2>{data.name}</h2>
-          <p>{data.email}</p>
-          <img src={data.avatar.url}></img>
-        </div>
-      )}
+      <Container>
+        {data && (
+          <Container className="container-profile">
+            <h1>Profile Page</h1>
+            <img className="banner-img" src={data.banner.url}></img>
+            <Card style={{ width: "18rem" }} className="profile-details">
+              <Card.Img variant="top" src={data.avatar.url} />
+              <Card.Body>
+                <Card.Title>Name: {data.name}</Card.Title>
+                <Card.Text>Email: {data.email}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Container>
+        )}
+      </Container>
     </>
   );
 }

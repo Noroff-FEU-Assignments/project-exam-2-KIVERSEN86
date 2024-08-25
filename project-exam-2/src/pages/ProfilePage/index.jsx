@@ -4,7 +4,6 @@ import ProfileDetail from "../../components/Profiles/ProfileDetail";
 function ProfilePage() {
   return (
     <Container>
-      <h1>Profile Page</h1>
       <ProfileDetail />
     </Container>
   );
