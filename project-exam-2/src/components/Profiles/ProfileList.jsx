@@ -53,11 +53,15 @@ function ProfileList() {
             <Card.Img></Card.Img>
           </Card.Header>
           <Card.Body>
-            <Card.Title>{profile.name}</Card.Title>
-            <Card.Text>{profile.email}</Card.Text>
+            <Card.Title>Name: {profile.name}</Card.Title>
+            <Card.Text>Email: {profile.email}</Card.Text>
             <Card.Text>{profile.bio}</Card.Text>
-            <Link to={`/profiles/${profile.name}`}>View Profile</Link>
-            <Button onClick={() => handleFollow(profile)}>{isFollowing(profile.name) ? "Unfollow" : "Follow"}</Button>
+            <Button className="btn-profile">
+              <Link to={`/profiles/${profile.name}`}>View Profile</Link>
+            </Button>
+            <Button className="btn-profile" onClick={() => handleFollow(profile)}>
+              {isFollowing(profile.name) ? "Unfollow" : "Follow"}
+            </Button>
           </Card.Body>
         </Card>
       ))}
