@@ -1,89 +1,58 @@
 # Project Exam 2
-## Goal
-To take the skills learned over the last two years and take on an extensive project where the finished product should reflect the candidate's general development capabilities, in addition to visual and technical skills.
 
-## Brief
-An existing Social Media company has approached you to create a brand new front end for their application. While they have a list of required features, the design and user experience has not been specified. Working with the official API documentation, plan, design and build a modern front end social media application.
+## Description
 
-## Requirements
+Add a more detailed description of what your project entails and set out to do.
 
-> All admin functionality is managed by an existing application. This project only covers the front-end application for the API.
+My project is to create a new front end for a Social Media company.
 
-## API
+I am currently working on this project, so this is not the finished product.
 
-The API you are using for this project can be found under Social EndPoints in the [Noroff API documentation](https://noroff-api-docs.netlify.app/).
+- A user can register a new account or login to an existing account.
+- Once logged in the user can view posts and profiles from other users.
+- A user can create posts or comment on other users posts.
+- A user can follow or unfollow another profile
+- A user can create, edit or delete their own post
 
-### Resources
+## Built With
 
-[API Guide](https://noroff-api-docs.netlify.app/social-endpoints/authentication)
-[API Documentation](https://nf-api.onrender.com/docs)
+You can list a the tech stack that you've used over here
 
-### User Stories
+- [React.js](https://reactjs.org/)
+- [Javascript]
+- [VITE](https://vitejs.dev/)
+- [Bootstrap](https://getbootstrap.com)
+- [SASS]
 
-The client has specified the following requirements in the form of *User Stories*:
-1. A user with a `stud.noroff.no` email may register
-2. A registered user may login
-3. A registered user may update their avatar and banner
-4. A registered user may logout
-5. A registered user may view a list of `Posts`
-6. A registered user may view a list of `Profiles`
-7. A registered user may view a single `Post` by `id`
-8. A registered user may view a single `Profile` by `name`
-9. A registered user may create a `Post`
-10. A registered user may update a `Post` they own
-11. A registered user may delete a `Post` they own
-12. A registered user may create a `Comment` on any `Post`
-13. A registered user may `react` to any `Post` with an emoji
-14. A registered user may `follow` and `unfollow` another `Profile`
+## Getting Started
 
-### Technical Restrictions
+### Installing
 
-The company CTO has set the following technical restrictions:
-1. Must use an approved `JavaScript Framework`
-2. Must use an approved `CSS Framework`
-3. Must be hosted on an approved `Static Host`
-4. Must use an approved `Design Application`
-5. Must use an approved `Planning Application`
+1. Clone the repo:
 
-### Required Links
+```bash
+git clone https://github.com/Noroff-FEU-Assignments/project-exam-2-KIVERSEN86.git
+```
 
-The Product Owner has requested links to the following:
-1. A Gantt chart for project timing
-2. A design prototype
-3. A style guide
-4. A kanban project board
-5. A repository link
-6. A hosted application demo link
+2. Install the dependencies:
 
-## Approved Resources
-This list covers libraries and services that have been vetted by the company and approved for use.
+```
+npm install
+```
 
-### JavaScript Frameworks
-- React (>16)
+### Running
 
-### CSS Frameworks
-- Bootstrap (>5)
-- Tailwind (>3)
-- MUI (>5)
-- Styled Components
-- CSS Modules
+To run the app, run the following commands:
 
-### Hosting Services
-- GitHub Pages
-- Netlify
+```bash
+npm run start
+npm run dev
+```
 
-### Design Applications
-- Adobe XD
-- Figma
-- Sketch
+## Contributing
 
-### Planning Applications
-- Trello
-- GitHub Projects
+If you want to contribute to the project, you need to make sure to open a pull request so the code can be reviewed before it is merged with the main branch
 
-## Delivery
-Include the required links in the Moodle delivery window using [this template format](delivery-template.html).
+## Contact
 
-All final changes must be merged into the default branch `main` or `master`. Other branches will not be checked.
-
-Ensure that the `readme.md` file describes your project thoroughly, including how to setup and run the project locally and any special instructions for testers.
+[My LinkedIn page](www.linkedin.com/in/kristoffer-iversen-a593811b5)

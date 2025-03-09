@@ -1,0 +1,9 @@
+.post-specific-card {
+  width: 18rem;
+}
+
+@media (min-width: 1000px) {
+  .post-specific-card {
+    width: 30rem;
+  }
+}

@@ -13,7 +13,9 @@ function DefaultNav() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary justify-content-between">
       <Container>
-        <Navbar.Brand href="/homeloggedin">SocialPlatform</Navbar.Brand>
+        <Navbar.Brand as={Link} to={!token ? "/" : "/homeloggedin"}>
+          SocialPlatform
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto link-styling">
@@ -29,10 +31,10 @@ function DefaultNav() {
             {!token ? (
               <>
                 <Nav.Link>
-                  <Link to="/login">Login</Link>
+                  <Link to="/">Login</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link to="/signup">Sign up</Link>
+                  <Link to="/register">Sign up</Link>
                 </Nav.Link>
               </>
             ) : (

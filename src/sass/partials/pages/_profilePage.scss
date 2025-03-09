@@ -1,0 +1,38 @@
+.banner-img {
+  max-width: 800px;
+}
+
+.container-profile {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-img {
+  max-width: 100px;
+}
+
+.container-profile-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.container-bio,
+.profile-details {
+  margin-top: 40px;
+}
+
+.container-bio {
+  width: 18rem;
+}
+
+@media (min-width: 900px) {
+  .container-profile-info {
+    flex-direction: row;
+  }
+
+  .container-bio {
+    width: 22rem;
+  }
+}

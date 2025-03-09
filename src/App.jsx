@@ -7,6 +7,8 @@ import Profiles from "./pages/Profiles";
 import ProfilePage from "./pages/ProfilePage";
 import Posts from "./pages/Posts";
 import PostSpecific from "./pages/PostSpecific";
+import EditPost from "./pages/EditPost";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
             <Route path="profiles/:name" element={<ProfilePage />} />
             <Route path="profiles" element={<Profiles />} />
             <Route path="posts/:id" element={<PostSpecific />} />
+            <Route path="edit/:postId" element={<EditPost />} />
             <Route path="posts" element={<Posts />} />
+            <Route path="register" element={<Register />} />
             <Route path="*" element={<div>Route not found</div>} />
           </Route>
         </Routes>

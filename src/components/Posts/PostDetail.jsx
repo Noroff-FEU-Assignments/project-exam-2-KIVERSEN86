@@ -28,6 +28,14 @@ function PostDetail() {
   const token = useToken();
   const { id } = useParams();
 
+  const dateFormatter = (Datechanger) => {
+    return new Date(Datechanger).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
   const { isPending, error, data } = useQuery({
     queryKey: ["post", id],
     queryFn: () => getPost(token, id),
@@ -42,10 +50,11 @@ function PostDetail() {
     <>
       {data && (
         <Container>
-          <Card style={{ width: "18rem" }}>
+          <Card className="post-specific-card">
             <Card.Body>
-              <Card.Title>{data.title}</Card.Title>
+              <Card.Title>Title: {data.title}</Card.Title>
               <Card.Text>{data.body}</Card.Text>
+              <Card.Text>Post created: {dateFormatter(data.created)}</Card.Text>
             </Card.Body>
           </Card>
         </Container>

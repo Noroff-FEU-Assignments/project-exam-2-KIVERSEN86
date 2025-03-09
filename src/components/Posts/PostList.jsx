@@ -75,9 +75,14 @@ function PostList() {
             <Card.Title>{post.title}</Card.Title>
             <Card.Text>{post.body}</Card.Text>
             {post.myId === uId && (
-              <Button onClick={() => deleteOwnPost(post.id)} className="btn btn-delete btn-profile">
-                Delete post
-              </Button>
+              <>
+                <Button onClick={() => deleteOwnPost(post.id)} className="btn btn-delete btn-profile">
+                  Delete post
+                </Button>
+                <Button className="btn btn-profile">
+                  <Link to={`/edit/${post.id}`}>Edit</Link>
+                </Button>
+              </>
             )}
             <Button className="btn btn-profile">
               <Link to={`/posts/${post.id}`}>View Post</Link>

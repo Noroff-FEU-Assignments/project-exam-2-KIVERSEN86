@@ -40,21 +40,32 @@ function ProfileDetail() {
 
   return (
     <>
-      <Container>
-        {data && (
-          <Container className="container-profile">
-            <h1>Profile Page</h1>
-            <img className="banner-img" src={data.banner.url}></img>
-            <Card style={{ width: "18rem" }} className="profile-details">
-              <Card.Img variant="top" src={data.avatar.url} />
-              <Card.Body>
-                <Card.Title>Name: {data.name}</Card.Title>
-                <Card.Text>Email: {data.email}</Card.Text>
-              </Card.Body>
-            </Card>
-          </Container>
-        )}
-      </Container>
+      <div>
+        <Container>
+          {data && (
+            <Container className="container-profile">
+              <h1>Profile Page</h1>
+              <img className="banner-img" src={data.banner.url}></img>
+              <div className="container-profile-info">
+                <Card style={{ width: "18rem" }} className="profile-details">
+                  <Card.Img variant="top" src={data.avatar.url} />
+                  <Card.Body>
+                    <Card.Title>Name: {data.name}</Card.Title>
+                    <Card.Text>Email: {data.email}</Card.Text>
+                    <Card.Text>Followers: {data._count.followers}</Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card className="container-bio">
+                  <Card.Header>{data.name}</Card.Header>
+                  <Card.Body>
+                    <Card.Text>Bio: {data.bio}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+            </Container>
+          )}
+        </Container>
+      </div>
     </>
   );
 }
