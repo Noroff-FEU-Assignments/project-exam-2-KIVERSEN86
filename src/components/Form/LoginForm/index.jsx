@@ -94,7 +94,7 @@ export function SignupForm() {
   return (
     <Form>
       <div className="home-container-signup d-grid gap-2">
-        <Button className="btn-signup" variant="primary" type="submit">
+        <Button className="btn-signup" variant="primary" type="submit" href="/register">
           Sign up
         </Button>
       </div>

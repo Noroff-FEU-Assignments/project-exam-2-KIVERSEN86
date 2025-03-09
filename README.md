@@ -34,7 +34,13 @@ You can list a the tech stack that you've used over here
 git clone https://github.com/Noroff-FEU-Assignments/project-exam-2-KIVERSEN86.git
 ```
 
-2. Install the dependencies:
+2. Navigate into the project directory:
+
+```bash
+cd project-exam-2-KIVERSEN86
+```
+
+3. Install the dependencies:
 
 ```
 npm install
@@ -45,7 +51,6 @@ npm install
 To run the app, run the following commands:
 
 ```bash
-npm run start
 npm run dev
 ```
 
