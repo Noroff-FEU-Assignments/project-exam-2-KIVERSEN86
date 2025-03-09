@@ -4,6 +4,7 @@ import { useToken, userId } from "../../states/userStore";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 async function getPosts(token) {
   const options = {
@@ -45,6 +46,7 @@ function PostList() {
   const token = useToken();
   const uId = userId();
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["posts"],
@@ -57,6 +59,7 @@ function PostList() {
     onSuccess: () => {
       console.log("Delete successful:", data);
       queryClient.invalidateQueries(["posts"]);
+      navigate(0);
     },
   });
 
@@ -78,9 +81,6 @@ function PostList() {
               <>
                 <Button onClick={() => deleteOwnPost(post.id)} className="btn btn-delete btn-profile">
                   Delete post
-                </Button>
-                <Button className="btn btn-profile">
-                  <Link to={`/edit/${post.id}`}>Edit</Link>
                 </Button>
               </>
             )}

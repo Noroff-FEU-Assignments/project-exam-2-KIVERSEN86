@@ -4,6 +4,8 @@ import { useToken } from "../../states/userStore";
 import { API_KEY, POST_URL } from "../../constants/api";
 import Container from "react-bootstrap/esm/Container";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 async function getPost(token, id) {
   const options = {
@@ -56,6 +58,9 @@ function PostDetail() {
               <Card.Text>{data.body}</Card.Text>
               <Card.Text>Post created: {dateFormatter(data.created)}</Card.Text>
             </Card.Body>
+            <Button className="btn btn-profile">
+              <Link to={`/edit/${data.id}`}>Edit</Link>
+            </Button>
           </Card>
         </Container>
       )}

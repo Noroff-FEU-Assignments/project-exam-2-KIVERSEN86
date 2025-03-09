@@ -1,5 +1,5 @@
 .card-container {
-  max-width: 600px;
+  width: 22rem;
   margin: 20px auto;
 }
 
@@ -18,5 +18,9 @@
 @media (min-width: 1000px) {
   .container-loggedin {
     flex-direction: row;
+  }
+
+  .card-container {
+    width: 28rem;
   }
 }

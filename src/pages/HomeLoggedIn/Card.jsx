@@ -75,7 +75,7 @@ function PostContainer() {
     <div>
       <AddPostForm />
       {data?.map((post) => (
-        <Card style={{ width: "22rem" }} key={post.id} className="card-container">
+        <Card key={post.id} className="card-container">
           <Card.Header>
             <Card.Img></Card.Img>
           </Card.Header>
