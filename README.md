@@ -54,6 +54,10 @@ To run the app, run the following commands:
 npm run dev
 ```
 
+If you encounter issues:
+
+- Make sure Node.js 18+ is installed: `node -v`
+
 ## Contributing
 
 If you want to contribute to the project, you need to make sure to open a pull request so the code can be reviewed before it is merged with the main branch
